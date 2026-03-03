@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Donasi Mudah - Form Donasi</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="container">
+      <header class="header">
+        <h1>Berbagi Kebaikan</h1>
+        <p>Mari salurkan zakat, sedekah, atau donasi dengan mudah dan aman.</p>
+      </header>
+
+      <nav class="nav-tabs">
+        <a href="/home/home.html" class="tab">🏠 Tampilan utama</a>
+        <a href="donatur.html" class="tab active">📝 Form Donasi</a>
+        <a href="/riwayat/riwayat.html" class="tab">📋 Riwayat Donasi</a>
+      </nav>
+
+      <div class="form-card">
+        <h2 id="form-title">Form Donasi</h2>
+        
+        <form class="form-donasi" method="post">
+          <div class="form-group">
+            <label for="nama-donatur">Nama Donatur</label>
+            <input type="text" id="nama-donatur" name="nama" placeholder="Contoh: Devano Agastya H" required />
+          </div>
+
+          <div class="form-group">
+            <label for="jumlah-donasi">Jumlah Donasi (Rp)</label>
+            <input type="number" id="jumlah-donasi" name="jumlah" min="10000" step="1000" placeholder="Minimal 10.000" required />
+          </div>
+
+          <div class="form-group">
+            <label for="metode-bayar">Metode Pembayaran</label>
+            <select name="metode" id="metode-bayar" required>
+              <option value="" disabled selected>Pilih metode pembayaran</option>
+              <option value="gopay">GoPay</option>
+              <option value="dana">DANA</option>
+              <option value="bca">Transfer BCA</option>
+              <option value="bni">Transfer BNI</option>
+            </select>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn-donasi" id="btn-submit">Donasi Sekarang</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="donatur.js"></script>
+  </body>
+</html>
