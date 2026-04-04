@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="/src/main.js"></script>
+    <link href="./src/output.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <title>Riwayat Transaksi - KlikBantu</title>
     <style>
@@ -20,7 +20,7 @@
         </div>
 
         <nav class="flex-1 flex flex-col gap-2 mt-10">
-          <a href="admin.html" class="flex items-center gap-3 p-3 rounded-xl font-semibold hover:bg-white/20 transition-all">
+          <a href="admin.php" class="flex items-center gap-3 p-3 rounded-xl font-semibold hover:bg-white/20 transition-all">
             <span>📊</span> Dashboard
           </a>
           <a href="#" class="flex items-center gap-3 p-3 rounded-xl font-semibold bg-white/20 transition-all">

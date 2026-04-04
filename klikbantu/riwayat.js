@@ -5,9 +5,9 @@
 
 let filterAktif = 'semua';
 
-function getDonasiData() {
-  return JSON.parse(localStorage.getItem('donasiList') || '[]');
-}
+// function getDonasiData() {
+//   return JSON.parse(localStorage.getItem('donasiList') || '[]');
+// }
 
 function fmt(n) {
   return 'Rp ' + Number(n).toLocaleString('id-ID');
@@ -58,7 +58,7 @@ function buatKartu(item) {
 
 // Render daftar transaksi sesuai filter aktif
 function renderTable() {
-  const allData = getDonasiData();
+  const allData = []; //getDonasiData();
   renderSummary(allData);
 
   const filtered = filterAktif === 'semua'

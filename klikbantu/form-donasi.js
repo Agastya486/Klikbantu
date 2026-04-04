@@ -26,15 +26,6 @@ checkboxAnonim.addEventListener('change', function() {
   }
 });
 
-// --- CORE DATA LOGIC ---
-function getDonasiData() {
-  return JSON.parse(localStorage.getItem('donasiList') || '[]');
-}
-
-function saveDonasiData(data) {
-  localStorage.setItem('donasiList', JSON.stringify(data));
-}
-
 // Submit donasi baru
 btnSubmit.addEventListener('click', () => {
   const nama = namaInput.value.trim();
@@ -67,10 +58,6 @@ btnSubmit.addEventListener('click', () => {
     tanggal,
     status: "Berhasil"
   };
-
-  const data = getDonasiData();
-  data.unshift(newEntry);
-  saveDonasiData(data);
 
   alert(`Terima kasih ${nama}! Donasi berhasil dicatat.`);
   

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>KlikBantu - Riwayat</title>
-    <script type="module" src="/src/main.js"></script>
+    <link href="./src/output.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -28,15 +28,15 @@
       <!-- Filter Tabs -->
       <div class="flex gap-2 mb-5">
         <button onclick="filterRiwayat('semua', this)" id="btn-semua"
-          class="filter-btn active px-5 py-2 rounded-xl border border-gray-200 bg-white font-semibold text-sm transition-all hover:bg-gray-50 [&.active]:bg-[#00aa13] [&.active]:text-white [&.active]:border-[#00aa13]">
+          class="filter-btn active px-5 py-2 rounded-xl border border-gray-200 bg-white font-semibold text-sm transition-all hover:bg-gray-50 [&.active]:bg-[#00aa13] [&.active]:text-white [&.active]:border-[#00aa13] cursor-pointer">
           Semua
         </button>
         <button onclick="filterRiwayat('donasi', this)" id="btn-donasi"
-          class="filter-btn px-5 py-2 rounded-xl border border-gray-200 bg-white font-semibold text-sm transition-all hover:bg-gray-50 [&.active]:bg-[#00aa13] [&.active]:text-white [&.active]:border-[#00aa13]">
+          class="filter-btn px-5 py-2 rounded-xl border border-gray-200 bg-white font-semibold text-sm transition-all hover:bg-gray-50 [&.active]:bg-[#00aa13] [&.active]:text-white [&.active]:border-[#00aa13] cursor-pointer">
           💰 Donasi
         </button>
         <button onclick="filterRiwayat('zakat', this)" id="btn-zakat"
-          class="filter-btn px-5 py-2 rounded-xl border border-gray-200 bg-white font-semibold text-sm transition-all hover:bg-gray-50 [&.active]:bg-[#00aa13] [&.active]:text-white [&.active]:border-[#00aa13]">
+          class="filter-btn px-5 py-2 rounded-xl border border-gray-200 bg-white font-semibold text-sm transition-all hover:bg-gray-50 [&.active]:bg-[#00aa13] [&.active]:text-white [&.active]:border-[#00aa13] cursor-pointer">
           🌙 Zakat
         </button>
       </div>
@@ -61,8 +61,8 @@
         <div class="text-5xl mb-4">🤲</div>
         <p class="text-gray-400 font-semibold">Belum ada transaksi.</p>
         <div class="flex gap-3 justify-center mt-4">
-          <a href="donasi.html" class="text-sm bg-[#00aa13] text-white font-bold px-5 py-2.5 rounded-xl">Donasi →</a>
-          <a href="zakat.html" class="text-sm bg-white border border-[#00aa13] text-[#00aa13] font-bold px-5 py-2.5 rounded-xl">Zakat →</a>
+          <a href="donasi.php" class="text-sm bg-[#00aa13] text-white font-bold px-5 py-2.5 rounded-xl">Donasi →</a>
+          <a href="zakat.php" class="text-sm bg-white border border-[#00aa13] text-[#00aa13] font-bold px-5 py-2.5 rounded-xl">Zakat →</a>
         </div>
       </div>
 
@@ -70,16 +70,16 @@
 
     <!-- Bottom nav -->
     <nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[500px] bg-white flex justify-around py-3 border-t border-gray-100 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
-      <a href="index.html" class="flex-1 text-center text-gray-400 text-[0.7rem]">
+      <a href="index.php" class="flex-1 text-center text-gray-400 text-[0.7rem]">
           <span class="text-[1.4rem] block mb-0.5">🏠</span>Beranda
       </a>
-      <a href="donasi.html" class="flex-1 text-center text-[0.7rem] text-gray-400 hover:text-[#00aa13] transition-colors">
+      <a href="donasi.php" class="flex-1 text-center text-[0.7rem] text-gray-400 hover:text-[#00aa13] transition-colors">
           <span class="text-[1.4rem] block mb-0.5">💰</span>Donasi
       </a>
       <a href="#" class="flex-1 text-center text-[0.7rem] text-[#00aa13] font-bold">
           <span class="text-[1.4rem] block mb-0.5">📜</span>Riwayat
       </a>
-      <a href="akun.html" class="flex-1 text-center text-[0.7rem] text-gray-400 hover:text-[#00aa13] transition-colors">
+      <a href="akun.php" class="flex-1 text-center text-[0.7rem] text-gray-400 hover:text-[#00aa13] transition-colors">
           <span class="text-[1.4rem] block mb-0.5">👤</span>Akun
       </a>
     </nav>

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>KlikBantu - Zakat</title>
-        <script type="module" src="/src/main.js"></script>
+        <link href="./src/output.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
         <style>
             body { font-family: 'Poppins', sans-serif; }
@@ -104,7 +104,7 @@
                                 <p class="text-[0.72rem] text-gray-400">Total Zakat Fitrah</p>
                                 <p id="result-fitrah" class="text-[1.25rem] font-bold text-[#00aa13]">Rp 37.500</p>
                             </div>
-                            <button onclick="bukaBayarDariKalkulator('Zakat Fitrah', document.getElementById('result-fitrah').textContent)" class="bg-[#00aa13] text-white text-[0.8rem] font-bold px-4 py-2 rounded-xl active:scale-95 transition-all cursor-pointer">Bayar →</button>
+                            <button onclick="bukaBayarDariKalkulator('fitrah', document.getElementById('result-fitrah').textContent)" class="bg-[#00aa13] text-white text-[0.8rem] font-bold px-4 py-2 rounded-xl active:scale-95 transition-all cursor-pointer">Bayar →</button>
                         </div>
                     </div>
                 </div>
@@ -126,7 +126,7 @@
                         </div>
                         <div id="result-maal-box" class="hidden bg-[#f0fff0] rounded-xl p-4 flex justify-between items-center">
                             <div><p class="text-[0.72rem] text-gray-400">Zakat Maal (2,5%)</p><p id="result-maal" class="text-[1.25rem] font-bold text-[#00aa13]">Rp 0</p></div>
-                            <button onclick="bukaBayarDariKalkulator('Zakat Maal', document.getElementById('result-maal').textContent)" class="bg-[#00aa13] text-white text-[0.8rem] font-bold px-4 py-2 rounded-xl active:scale-95 transition-all">Bayar →</button>
+                            <button onclick="bukaBayarDariKalkulator('maal', document.getElementById('result-maal').textContent)" class="bg-[#00aa13] text-white text-[0.8rem] font-bold px-4 py-2 rounded-xl active:scale-95 transition-all cursor-pointer">Bayar →</button>
                         </div>
                         <div id="maal-tidak-wajib" class="hidden bg-yellow-50 rounded-xl p-4">
                             <p class="text-[0.8rem] text-yellow-700 font-semibold">⚠️ Harta belum mencapai nisab</p>
@@ -147,7 +147,7 @@
                         </div>
                         <div id="result-penghasilan-box" class="hidden bg-[#f0fff0] rounded-xl p-4 flex justify-between items-center">
                             <div><p class="text-[0.72rem] text-gray-400">Zakat per Bulan</p><p id="result-penghasilan" class="text-[1.25rem] font-bold text-[#00aa13]">Rp 0</p></div>
-                            <button onclick="bukaBayarDariKalkulator('Zakat Penghasilan', document.getElementById('result-penghasilan').textContent)" class="bg-[#00aa13] text-white text-[0.8rem] font-bold px-4 py-2 rounded-xl active:scale-95 transition-all">Bayar →</button>
+                            <button onclick="bukaBayarDariKalkulator('penghasilan', document.getElementById('result-penghasilan').textContent)" class="bg-[#00aa13] text-white text-[0.8rem] font-bold px-4 py-2 rounded-xl active:scale-95 transition-all cursor-pointer">Bayar →</button>
                         </div>
                         <div id="penghasilan-tidak-wajib" class="hidden bg-yellow-50 rounded-xl p-4">
                             <p class="text-[0.8rem] text-yellow-700 font-semibold">⚠️ Penghasilan belum mencapai nisab</p>
@@ -168,7 +168,7 @@
                         </div>
                         <div id="result-tabungan-box" class="hidden bg-[#f0fff0] rounded-xl p-4 flex justify-between items-center">
                             <div><p class="text-[0.72rem] text-gray-400">Zakat Tabungan (2,5%)</p><p id="result-tabungan" class="text-[1.25rem] font-bold text-[#00aa13]">Rp 0</p></div>
-                            <button onclick="bukaBayarDariKalkulator('Zakat Tabungan', document.getElementById('result-tabungan').textContent)" class="bg-[#00aa13] text-white text-[0.8rem] font-bold px-4 py-2 rounded-xl active:scale-95 transition-all">Bayar →</button>
+                            <button onclick="bukaBayarDariKalkulator('tabungan', document.getElementById('result-tabungan').textContent)" class="bg-[#00aa13] text-white text-[0.8rem] font-bold px-4 py-2 rounded-xl active:scale-95 transition-all cursor-pointer">Bayar →</button>
                         </div>
                         <div id="tabungan-tidak-wajib" class="hidden bg-yellow-50 rounded-xl p-4">
                             <p class="text-[0.8rem] text-yellow-700 font-semibold">⚠️ Tabungan belum mencapai nisab</p>
@@ -193,7 +193,7 @@
                         </div>
                         <div id="result-emas-box" class="hidden bg-[#f0fff0] rounded-xl p-4 flex justify-between items-center">
                             <div><p class="text-[0.72rem] text-gray-400">Zakat Emas (2,5%)</p><p id="result-emas" class="text-[1.25rem] font-bold text-[#00aa13]">Rp 0</p></div>
-                            <button onclick="bukaBayarDariKalkulator('Zakat Emas', document.getElementById('result-emas').textContent)" class="bg-[#00aa13] text-white text-[0.8rem] font-bold px-4 py-2 rounded-xl active:scale-95 transition-all">Bayar →</button>
+                            <button onclick="bukaBayarDariKalkulator('emas', document.getElementById('result-emas').textContent)" class="bg-[#00aa13] text-white text-[0.8rem] font-bold px-4 py-2 rounded-xl active:scale-95 transition-all cursor-pointer">Bayar →</button>
                         </div>
                         <div id="emas-tidak-wajib" class="hidden bg-yellow-50 rounded-xl p-4">
                             <p class="text-[0.8rem] text-yellow-700 font-semibold">⚠️ Emas belum mencapai nisab (85 gram)</p>
@@ -218,7 +218,7 @@
                         </div>
                         <div id="result-perusahaan-box" class="hidden bg-[#f0fff0] rounded-xl p-4 flex justify-between items-center">
                             <div><p class="text-[0.72rem] text-gray-400">Zakat Perusahaan (2,5%)</p><p id="result-perusahaan" class="text-[1.25rem] font-bold text-[#00aa13]">Rp 0</p></div>
-                            <button onclick="bukaBayarDariKalkulator('Zakat Perusahaan', document.getElementById('result-perusahaan').textContent)" class="bg-[#00aa13] text-white text-[0.8rem] font-bold px-4 py-2 rounded-xl active:scale-95 transition-all">Bayar →</button>
+                            <button onclick="bukaBayarDariKalkulator('perusahaan', document.getElementById('result-perusahaan').textContent)" class="bg-[#00aa13] text-white text-[0.8rem] font-bold px-4 py-2 rounded-xl active:scale-95 transition-all cursor-pointer">Bayar →</button>
                         </div>
                     </div>
                 </div>
@@ -226,17 +226,16 @@
 
             <!-- ===== TAB BAYAR ===== -->
             <div id="content-bayar" class="hidden">
-                <div class="bg-white rounded-2xl p-5 shadow-sm mb-5">
-                    <h2 class="font-bold text-[0.95rem] mb-4">Form Pembayaran Zakat</h2>
+                <form id="form-pembayaran-zakat" onsubmit="event.preventDefault(); prosesZakat();" class="bg-white rounded-2xl p-5 shadow-sm mb-5">                    <h2 class="font-bold text-[0.95rem] mb-4">Form Pembayaran Zakat</h2>
                     <div class="space-y-4">
                         <div>
                             <label class="text-[0.8rem] font-semibold text-gray-500 mb-1 block">Nama Muzakki</label>
-                            <input type="text" id="nama-muzakki" placeholder="Nama lengkap kamu" class="w-full bg-[#f8f9fa] border border-gray-100 rounded-xl px-4 py-3 text-[0.9rem] focus:outline-none focus:border-[#00aa13]">
+                            <input type="text" name="nama_muzakki" id="nama-muzakki" placeholder="Nama lengkap kamu" class="w-full bg-[#f8f9fa] border border-gray-100 rounded-xl px-4 py-3 text-[0.9rem] focus:outline-none focus:border-[#00aa13]" required>
                         </div>
                         <!-- Anonim toggle -->
                         <div class="flex flex-col gap-1">
                             <label class="flex items-center gap-2 cursor-pointer text-sm text-[#666] hover:text-[#00aa13] transition-colors">
-                                <input type="checkbox" id="checkbox-anonim-zakat" class="w-4 h-4 accent-[#00aa13] cursor-pointer">
+                                <input type="checkbox" name="anonim" id="checkbox-anonim-zakat" class="w-4 h-4 accent-[#00aa13] cursor-pointer">
                                 Bayar sebagai Anonim
                             </label>
                             <p id="msg-anonim-zakat" class="hidden text-[11px] text-[#00aa13] font-medium ml-6 italic">
@@ -245,20 +244,20 @@
                         </div>
                         <div>
                             <label class="text-[0.8rem] font-semibold text-gray-500 mb-1 block">Jenis Zakat</label>
-                            <select id="jenis-zakat-bayar" class="w-full bg-[#f8f9fa] border border-gray-100 rounded-xl px-4 py-3 text-[0.9rem] focus:outline-none focus:border-[#00aa13] cursor-pointer">
+                            <select name="jenis_zakat" id="jenis-zakat-bayar" class="w-full bg-[#f8f9fa] border border-gray-100 rounded-xl px-4 py-3 text-[0.9rem] focus:outline-none focus:border-[#00aa13] cursor-pointer">
                                 <option value="">Pilih jenis zakat</option>
-                                <option value="Zakat Fitrah">Zakat Fitrah</option>
-                                <option value="Zakat Maal">Zakat Maal</option>
-                                <option value="Zakat Penghasilan">Zakat Penghasilan</option>
-                                <option value="Zakat Tabungan">Zakat Tabungan</option>
-                                <option value="Zakat Emas">Zakat Emas</option>
-                                <option value="Zakat Perusahaan">Zakat Perusahaan</option>
+                                <option value="fitrah">Zakat Fitrah</option>
+                                <option value="maal">Zakat Maal</option>
+                                <option value="penghasilan">Zakat Penghasilan</option>
+                                <option value="tabungan">Zakat Tabungan</option>
+                                <option value="emas">Zakat Emas</option>
+                                <option value="perusahaan">Zakat Perusahaan</option>
                             </select>
                         </div>
                         <div>
                             <label class="text-[0.8rem] font-semibold text-gray-500 mb-1 block">Jumlah Zakat</label>
                             <div class="relative"><span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-[0.85rem]">Rp</span>
-                            <input type="number" id="jumlah-zakat-bayar" placeholder="0" class="w-full bg-[#f8f9fa] border border-gray-100 rounded-xl pl-10 pr-4 py-3 text-[0.9rem] focus:outline-none focus:border-[#00aa13]"></div>
+                            <input type="number" name="jumlah_zakat" id="jumlah-zakat-bayar" placeholder="0" class="w-full bg-[#f8f9fa] border border-gray-100 rounded-xl pl-10 pr-4 py-3 text-[0.9rem] focus:outline-none focus:border-[#00aa13]" required></div>
                         </div>
                         <!-- Nominal cepat -->
                         <div>
@@ -276,7 +275,7 @@
                             Bayar Zakat Sekarang 🤲
                         </button>
                     </div>
-                </div>
+                </form>
 
                 <h2 class="text-[0.7rem] font-bold text-gray-400 uppercase tracking-widest mb-3">Disalurkan Melalui</h2>
                 <div class="flex gap-3 overflow-x-auto pb-3 no-scrollbar">
@@ -368,40 +367,17 @@
                     </div>
                 </div>
             </div>
-
         </main>
-
-        <!-- Modal Konfirmasi -->
-        <div id="modal-konfirmasi" class="hidden fixed inset-0 bg-black/50 z-50 flex items-end justify-center">
-            <div class="bg-white rounded-t-[32px] p-6 w-full max-w-[500px]">
-                <div class="w-12 h-1 bg-gray-200 rounded-full mx-auto mb-5"></div>
-                <div class="text-center mb-5">
-                    <div class="w-16 h-16 bg-[#f0fff0] rounded-full flex items-center justify-center mx-auto mb-3"><span class="text-3xl">🤲</span></div>
-                    <h3 class="font-bold text-lg">Konfirmasi Zakat</h3>
-                    <p id="modal-jenis" class="text-gray-500 text-sm mt-1"></p>
-                </div>
-                <div class="bg-[#f8f9fa] rounded-2xl p-4 mb-5 flex justify-between items-center">
-                    <span class="text-sm text-gray-500">Jumlah Zakat</span>
-                    <span id="modal-jumlah" class="font-bold text-[#00aa13] text-lg"></span>
-                </div>
-                <button onclick="konfirmasiZakat()" class="w-full bg-[#00aa13] text-white font-bold py-4 rounded-xl text-base active:scale-95 transition-all mb-3">Ya, Tunaikan Zakat ✓</button>
-                <button onclick="tutupModal()" class="w-full bg-gray-100 text-gray-500 font-semibold py-3 rounded-xl text-sm">Batalkan</button>
-            </div>
-        </div>
-
-        <!-- Toast sukses -->
-        <div id="toast-sukses" class="hidden fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-[#00aa13] text-white px-6 py-3 rounded-full shadow-xl text-sm font-semibold flex items-center gap-2 whitespace-nowrap">
-            ✅ Zakat berhasil ditunaikan! Jazakallahu Khairan.
-        </div>
 
         <!-- Bottom nav -->
         <nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[500px] bg-white flex justify-around py-3 border-t border-gray-100 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
-            <a href="index.html" class="flex-1 text-center text-[0.7rem] text-gray-400 hover:text-[#00aa13] transition-colors"><span class="text-[1.4rem] block mb-0.5">🏠</span>Beranda</a>
-            <a href="donasi.html" class="flex-1 text-center text-[0.7rem] text-gray-400 hover:text-[#00aa13] transition-colors"><span class="text-[1.4rem] block mb-0.5">💰</span>Donasi</a>
-            <a href="riwayat.html" class="flex-1 text-center text-[0.7rem] text-gray-400 hover:text-[#00aa13] transition-colors"><span class="text-[1.4rem] block mb-0.5">📜</span>Riwayat</a>
-            <a href="akun.html" class="flex-1 text-center text-[0.7rem] text-gray-400 hover:text-[#00aa13] transition-colors"><span class="text-[1.4rem] block mb-0.5">👤</span>Akun</a>
+            <a href="index.php" class="flex-1 text-center text-[0.7rem] text-gray-400 hover:text-[#00aa13] transition-colors"><span class="text-[1.4rem] block mb-0.5">🏠</span>Beranda</a>
+            <a href="donasi.php" class="flex-1 text-center text-[0.7rem] text-gray-400 hover:text-[#00aa13] transition-colors"><span class="text-[1.4rem] block mb-0.5">💰</span>Donasi</a>
+            <a href="riwayat.php" class="flex-1 text-center text-[0.7rem] text-gray-400 hover:text-[#00aa13] transition-colors"><span class="text-[1.4rem] block mb-0.5">📜</span>Riwayat</a>
+            <a href="akun.php" class="flex-1 text-center text-[0.7rem] text-gray-400 hover:text-[#00aa13] transition-colors"><span class="text-[1.4rem] block mb-0.5">👤</span>Akun</a>
         </nav>
 
         <script src="zakat.js"></script>
+        <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="YOUR_CLIENT_KEY"></script>
     </body>
 </html>

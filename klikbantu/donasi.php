@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Berbagi Kebaikan - Pilih Donasi</title>
-        <script type="module" src="/src/main.js"></script>
+        <link href="./src/output.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
         <style>
             body { font-family: 'Poppins', sans-serif; }
@@ -48,7 +48,7 @@
                             <p class="text-[0.7rem] text-gray-400">Terkumpul <br><span class="text-[#333] font-bold text-[0.85rem]">Rp 12.400.000</span></p>
                             <p class="text-[0.7rem] text-gray-400 text-right">Sisa Hari <br><span class="text-[#333] font-bold text-[0.85rem]">12 Hari</span></p>
                         </div>
-                        <a href="form-donasi.html" class="block text-center bg-[#00aa13] text-white font-bold py-2.5 rounded-xl text-sm transition-active active:scale-95">Donasi Sekarang</a>
+                        <a href="form-donasi.php" class="block text-center bg-[#00aa13] text-white font-bold py-2.5 rounded-xl text-sm transition-active active:scale-95">Donasi Sekarang</a>
                     </div>
                 </div>
 
@@ -64,7 +64,7 @@
                             <p class="text-[0.7rem] text-gray-400">Terkumpul <br><span class="text-[#333] font-bold text-[0.85rem]">Rp 89.000.000</span></p>
                             <p class="text-[0.7rem] text-gray-400 text-right">Sisa Hari <br><span class="text-[#333] font-bold text-[0.85rem]">5 Hari</span></p>
                         </div>
-                        <a href="form-donasi.html" class="block text-center bg-[#00aa13] text-white font-bold py-2.5 rounded-xl text-sm">Donasi Sekarang</a>
+                        <a href="form-donasi.php" class="block text-center bg-[#00aa13] text-white font-bold py-2.5 rounded-xl text-sm">Donasi Sekarang</a>
                     </div>
                 </div>
 
@@ -73,16 +73,16 @@
 
         
         <nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[500px] bg-white flex justify-around py-3 border-t border-gray-100 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
-            <a href="index.html" class="flex-1 text-center text-[0.7rem] text-gray-400 transition-colors">
+            <a href="index.php" class="flex-1 text-center text-[0.7rem] text-gray-400 transition-colors">
                 <span class="text-[1.4rem] block mb-0.5">🏠</span>Beranda
             </a>
             <a href="#" class="flex-1 text-center text-[0.7rem] text-[#00aa13] font-bold">
                 <span class="text-[1.4rem] block mb-0.5">💰</span>Donasi
             </a>
-            <a href="riwayat.html" class="flex-1 text-center text-[0.7rem] text-gray-400">
+            <a href="riwayat.php" class="flex-1 text-center text-[0.7rem] text-gray-400">
                 <span class="text-[1.4rem] block mb-0.5">📜</span>Riwayat
             </a>
-            <a href="akun.html" class="flex-1 text-center text-[0.7rem] text-gray-400">
+            <a href="akun.php" class="flex-1 text-center text-[0.7rem] text-gray-400">
                 <span class="text-[1.4rem] block mb-0.5">👤</span>Akun
             </a>
         </nav>

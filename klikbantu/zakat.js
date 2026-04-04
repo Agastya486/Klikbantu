@@ -1,16 +1,3 @@
-// ============================================================
-// ZAKAT.JS — KlikBantu
-// Menangani semua logic zakat + integrasi localStorage
-// ============================================================
-
-// ---- Helpers localStorage ----
-function getDonasiData() {
-  return JSON.parse(localStorage.getItem('donasiList') || '[]');
-}
-function saveDonasiData(data) {
-  localStorage.setItem('donasiList', JSON.stringify(data));
-}
-
 function fmt(n) {
   return Math.round(n).toLocaleString('id-ID');
 }
@@ -154,95 +141,59 @@ function bukaBayarDariKalkulator(jenis, jumlahText) {
   document.getElementById('content-bayar').scrollIntoView({ behavior: 'smooth' });
 }
 
+async function konfirmasiZakat() {
+  const pending = window._pendingZakat;
+  if (!pending) return;
+
+  const formData = new FormData();
+  formData.append('nama_muzakki', pending.nama);
+  formData.append('jenis_zakat', pending.jenis);
+  formData.append('jumlah_zakat', pending.jumlah);
+
+  try {
+    const response = await fetch('auth/proses_bayar_zakat.php', {
+      method: 'POST',
+      body: formData
+    });
+    
+    // Pastikan PHP lu balikin json_encode(['token' => $snapToken]);
+    const result = await response.json(); 
+
+    if (result.token) {
+      window.snap.pay(result.token, {
+        onSuccess: function(result) {
+          document.getElementById('toast-sukses').classList.remove('hidden');
+          setTimeout(() => location.reload(), 3000);
+        },
+        // ... (onPending, dsb)
+      });
+    }
+  } catch (err) {
+    console.error("Error:", err);
+    alert("Cek konsol browser, kemungkinan PHP lu return error atau bukan JSON.");
+  }
+}
+
 // ---- Proses Pembayaran dari Tab Bayar ----
-// Validasi lalu buka modal konfirmasi
 function prosesZakat() {
   const nama = document.getElementById('nama-muzakki').value.trim();
   const jenis = document.getElementById('jenis-zakat-bayar').value;
   const jumlah = document.getElementById('jumlah-zakat-bayar').value;
-  const metode = document.getElementById('metode-bayar-zakat').value;
 
-  if (!nama || !jenis || !jumlah || Number(jumlah) <= 0 || !metode) {
+  if (!nama || !jenis || !jumlah || Number(jumlah) <= 0) {
     alert('Mohon lengkapi semua data terlebih dahulu.');
     return;
   }
 
-  // Simpan data sementara ke variabel global untuk dipakai saat konfirmasi
+  // Simpan data ke variabel global sementara untuk konfirmasi
   window._pendingZakat = {
-    nama,
-    jenis,
-    jumlah: Number(jumlah),
-    metode,
+    nama: nama,
+    jenis: jenis,
+    jumlah: jumlah
   };
-
-  // Tampilkan modal
-  document.getElementById('modal-jenis').textContent = jenis;
-  document.getElementById('modal-jumlah').textContent = 'Rp ' + fmt(Number(jumlah));
-  document.getElementById('modal-konfirmasi').classList.remove('hidden');
-}
-
-// ---- Tutup Modal ----
-function tutupModal() {
-  document.getElementById('modal-konfirmasi').classList.add('hidden');
-}
-
-// ---- Konfirmasi & Simpan ke localStorage ----
-function konfirmasiZakat() {
-  tutupModal();
-
-  const pending = window._pendingZakat;
-  if (!pending) return;
-
-  // Cek anonim
-  const checkboxAnonim = document.getElementById('checkbox-anonim-zakat');
-  const namaFinal = checkboxAnonim && checkboxAnonim.checked ? 'Hamba Allah' : pending.nama;
-
-  const sekarang = new Date();
-  const tanggal = sekarang.toLocaleDateString('id-ID', {
-    day: 'numeric',
-    month: 'short',
-    year: 'numeric'
-  });
-
-  const newEntry = {
-    id: Date.now(),
-    nama: namaFinal,
-    email: checkboxAnonim && checkboxAnonim.checked ? 'Anonymous' : 'user@email.com',
-    tipe: 'zakat',            // Penting: agar tabel admin bisa filter
-    program: pending.jenis,  // Nama jenis zakatnya (mis. "Zakat Maal")
-    jumlah: pending.jumlah,
-    metode: pending.metode,
-    tanggal,
-    status: 'Berhasil'
-  };
-
-  const data = getDonasiData();
-  data.unshift(newEntry);
-  saveDonasiData(data);
-
-  // Reset form
-  document.getElementById('nama-muzakki').value = '';
-  document.getElementById('jenis-zakat-bayar').selectedIndex = 0;
-  document.getElementById('jumlah-zakat-bayar').value = '';
-  document.getElementById('metode-bayar-zakat').selectedIndex = 0;
-  if (document.getElementById('checkbox-anonim-zakat')) {
-    document.getElementById('checkbox-anonim-zakat').checked = false;
-    document.getElementById('msg-anonim-zakat').classList.add('hidden');
-    document.getElementById('nama-muzakki').readOnly = false;
-  }
-
-  window._pendingZakat = null;
-
-  // Toast sukses
-  const t = document.getElementById('toast-sukses');
-  t.classList.remove('hidden');
-  setTimeout(() => t.classList.add('hidden'), 3500);
-}
-
-// ---- Accordion (Tab Info) ----
-function toggleAccordion(btn) {
-  btn.nextElementSibling.classList.toggle('open');
-  btn.querySelector('.accordion-arrow').classList.toggle('open');
+  // Langsung panggil konfirmasiZakat atau tampilin modal dulu
+  // Karena lu mau langsung, kita panggil konfirmasiZakat()
+  konfirmasiZakat();
 }
 
 // ---- Logic Anonim ----
