@@ -34,7 +34,7 @@
         <header class="bg-gradient-to-br from-[#00aa13] to-[#006600] text-white pt-14 pb-6 px-5 rounded-b-[32px] shadow-[0_4px_15px_rgba(0,102,0,0.2)]">
             <div class="max-w-[500px] mx-auto">
                 <div class="flex items-center mb-3">
-                    <a href="index.html" class="mr-3 text-white/80 text-xl">←</a>
+                    <a href="index.php" class="mr-3 text-white/80 text-xl">←</a>
                     <h1 class="text-[1.2rem] font-bold">Zakat</h1>
                 </div>
                 <p class="text-white/80 text-[0.82rem] mb-5">Tunaikan kewajiban zakatmu dengan mudah, aman, dan tepat sasaran.</p>
@@ -271,7 +271,7 @@
                                 <button onclick="setNominal(2500000)" class="bg-[#f0fff0] text-[#006600] text-[0.75rem] font-semibold py-2 rounded-xl border border-green-100 active:bg-green-100">Rp 2,5jt</button>
                             </div>
                         </div>
-                        <button onclick="prosesZakat()" class="w-full bg-[#00aa13] text-white font-bold py-4 rounded-xl text-[0.95rem] active:scale-95 transition-all shadow-lg shadow-green-100 mt-2 cursor-pointer">
+                        <button class="w-full bg-[#00aa13] text-white font-bold py-4 rounded-xl text-[0.95rem] active:scale-95 transition-all shadow-lg shadow-green-100 mt-2 cursor-pointer">
                             Bayar Zakat Sekarang 🤲
                         </button>
                     </div>
@@ -378,6 +378,6 @@
         </nav>
 
         <script src="zakat.js"></script>
-        <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="YOUR_CLIENT_KEY"></script>
+        <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-HT_tSHO7ipGR_kQ8"></script>
     </body>
 </html>

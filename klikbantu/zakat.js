@@ -145,19 +145,22 @@ async function konfirmasiZakat() {
   const pending = window._pendingZakat;
   if (!pending) return;
 
+
   const formData = new FormData();
   formData.append('nama_muzakki', pending.nama);
   formData.append('jenis_zakat', pending.jenis);
   formData.append('jumlah_zakat', pending.jumlah);
+  formData.append('is_anonim', pending.is_anonim);
 
   try {
     const response = await fetch('auth/proses_bayar_zakat.php', {
       method: 'POST',
       body: formData
     });
-    
+   
     // Pastikan PHP lu balikin json_encode(['token' => $snapToken]);
-    const result = await response.json(); 
+    const result = await response.json();
+
 
     if (result.token) {
       window.snap.pay(result.token, {
@@ -165,12 +168,14 @@ async function konfirmasiZakat() {
           document.getElementById('toast-sukses').classList.remove('hidden');
           setTimeout(() => location.reload(), 3000);
         },
-        // ... (onPending, dsb)
+        onError: function(result) {
+          alert("Pembayaran Gagal!");
+          console.log(result);
+        }
       });
     }
   } catch (err) {
     console.error("Error:", err);
-    alert("Cek konsol browser, kemungkinan PHP lu return error atau bukan JSON.");
   }
 }
 
