@@ -2,7 +2,7 @@
     require_once dirname(__FILE__) . '/../vendor/autoload.php';
     include '../includes/koneksi.php';
 
-    \Midtrans\Config::$serverKey = 'Mid-server-2weLjAGDvIYX-m4dei8X4oh-';
+    \Midtrans\Config::$serverKey = 'midtrans-server-KEY';
     \Midtrans\Config::$isProduction = false;
 
     try {

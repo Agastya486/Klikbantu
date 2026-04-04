@@ -10,7 +10,7 @@
     }
 
     // Konfigurasi Midtrans
-    \Midtrans\Config::$serverKey    = 'Mid-server-2weLjAGDvIYX-m4dei8X4oh-';
+    \Midtrans\Config::$serverKey    = 'midtrans-server-KEY';
     \Midtrans\Config::$isProduction = false;
     \Midtrans\Config::$isSanitized  = true; // Fitur untuk membersihkan inputan agar terhindar dari script injection
     \Midtrans\Config::$is3ds        = true; // Fitur untuk mengaktifkan 3D Secure (untuk kartu kredit)
